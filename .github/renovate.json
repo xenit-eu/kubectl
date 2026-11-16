@@ -1,4 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>xenit-eu/contentgrid-renovate-presets:renovate.json", "docker:pinDigests", "docker:enableMajor"]
+  "extends": ["github>xenit-eu/contentgrid-renovate-presets:renovate.json", "docker:pinDigests", "docker:enableMajor"],
+  "packageRules": [
+    {
+      "description": "Auto-merge Docker digest updates",
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["digest"],
+      "automerge": true
+    }
+  ]
 }
